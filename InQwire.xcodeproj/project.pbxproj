@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4ED81C5675AA67C815AF46CD /* Pods_InQwire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14839B72680816B1404E112 /* Pods_InQwire.framework */; };
 		A3B03CD51F9033170030DC1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B03CD41F9033170030DC1E /* AppDelegate.swift */; };
 		A3B03CD71F9033170030DC1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B03CD61F9033170030DC1E /* ViewController.swift */; };
 		A3B03CDA1F9033170030DC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B03CD81F9033170030DC1E /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CCE42B55402BEDAE39D6232 /* Pods-InQwire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InQwire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InQwire/Pods-InQwire.debug.xcconfig"; sourceTree = "<group>"; };
+		7DD15EBC5735ABBC41944A3C /* Pods-InQwire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InQwire.release.xcconfig"; path = "Pods/Target Support Files/Pods-InQwire/Pods-InQwire.release.xcconfig"; sourceTree = "<group>"; };
 		A3B03CD11F9033170030DC1E /* InQwire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InQwire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B03CD41F9033170030DC1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3B03CD61F9033170030DC1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		A3B03CDB1F9033170030DC1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3B03CDE1F9033170030DC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3B03CE01F9033170030DC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E14839B72680816B1404E112 /* Pods_InQwire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InQwire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ED81C5675AA67C815AF46CD /* Pods_InQwire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		459CDF82094B269823BAE8EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1CCE42B55402BEDAE39D6232 /* Pods-InQwire.debug.xcconfig */,
+				7DD15EBC5735ABBC41944A3C /* Pods-InQwire.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A3B03CC81F9033170030DC1E = {
 			isa = PBXGroup;
 			children = (
 				A3B03CD31F9033170030DC1E /* InQwire */,
 				A3B03CD21F9033170030DC1E /* Products */,
+				459CDF82094B269823BAE8EC /* Pods */,
+				B63885168039A91F46F18257 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = InQwire;
 			sourceTree = "<group>";
 		};
+		B63885168039A91F46F18257 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E14839B72680816B1404E112 /* Pods_InQwire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3B03CE31F9033170030DC1E /* Build configuration list for PBXNativeTarget "InQwire" */;
 			buildPhases = (
+				28443907125F21A3C40CD284 /* [CP] Check Pods Manifest.lock */,
 				A3B03CCD1F9033170030DC1E /* Sources */,
 				A3B03CCE1F9033170030DC1E /* Frameworks */,
 				A3B03CCF1F9033170030DC1E /* Resources */,
+				A8971295604236F3335E56B0 /* [CP] Embed Pods Frameworks */,
+				68691230C64F166E3F0FF307 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28443907125F21A3C40CD284 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InQwire-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68691230C64F166E3F0FF307 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InQwire/Pods-InQwire-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8971295604236F3335E56B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-InQwire/Pods-InQwire-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InQwire/Pods-InQwire-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A3B03CCD1F9033170030DC1E /* Sources */ = {
@@ -272,6 +353,7 @@
 		};
 		A3B03CE41F9033170030DC1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CCE42B55402BEDAE39D6232 /* Pods-InQwire.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +369,7 @@
 		};
 		A3B03CE51F9033170030DC1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DD15EBC5735ABBC41944A3C /* Pods-InQwire.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
