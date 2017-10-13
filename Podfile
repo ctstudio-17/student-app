@@ -5,4 +5,5 @@ target 'InQwire' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'ModelMapper'
+  pod 'UICircularProgressRing'
 end

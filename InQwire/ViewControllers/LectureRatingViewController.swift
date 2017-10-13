@@ -70,6 +70,10 @@ class LectureRatingViewController: UIViewController {
             self?.navigationController?.dismiss(animated: true, completion: nil)
         }
     }
+    
+    @IBAction private func close() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension LectureRatingViewController: UITextViewDelegate {
