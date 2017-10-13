@@ -64,6 +64,11 @@ class LectureRatingViewController: UIViewController {
             let isSelected = (button as? UIButton)?.isSelected ?? false
             ratings += isSelected ? 1 : 0
         }
+
+        API.rate(lectureId: "1", studentId: "fp73", ratings: ratings, feedback: self.textView.text)
+        { [weak self] _ in
+            self?.navigationController?.dismiss(animated: true, completion: nil)
+        }
     }
 }
 

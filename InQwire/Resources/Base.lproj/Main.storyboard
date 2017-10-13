@@ -213,11 +213,11 @@
             </objects>
             <point key="canvasLocation" x="1544.8" y="133.5832083958021"/>
         </scene>
-        <!--Professor feedback-->
+        <!--Rate this lecture-->
         <scene sceneID="qyj-6V-PDy">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tRq-wz-9Bh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="feedback" title="Professor feedback" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WP7-Qp-cu4" customClass="LectureRatingViewController" customModule="InQwire" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="feedback" title="Rate this lecture" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WP7-Qp-cu4" customClass="LectureRatingViewController" customModule="InQwire" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c41-MY-bbD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
