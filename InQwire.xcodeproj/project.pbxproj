@@ -16,6 +16,12 @@
 		A3E901EE1F904F7F0073FD34 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901ED1F904F7F0073FD34 /* UIView+Extensions.swift */; };
 		A3E901F11F9062430073FD34 /* InClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F01F9062430073FD34 /* InClassViewController.swift */; };
 		A3E901F31F9074CF0073FD34 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F21F9074CF0073FD34 /* PDFViewController.swift */; };
+		A3E901F71F907D230073FD34 /* ClassFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F61F907D230073FD34 /* ClassFetcher.swift */; };
+		A3E901FA1F90822C0073FD34 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F91F90822C0073FD34 /* Course.swift */; };
+		A3E901FD1F9084F60073FD34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901FC1F9084F60073FD34 /* User.swift */; };
+		A3E901FF1F90863C0073FD34 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901FE1F90863C0073FD34 /* API.swift */; };
+		A3E902021F9107C60073FD34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3E901F51F907A580073FD34 /* GoogleService-Info.plist */; };
+		A3E902041F9110DA0073FD34 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E902031F9110DA0073FD34 /* Lecture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +37,12 @@
 		A3E901ED1F904F7F0073FD34 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A3E901F01F9062430073FD34 /* InClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InClassViewController.swift; sourceTree = "<group>"; };
 		A3E901F21F9074CF0073FD34 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		A3E901F51F907A580073FD34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A3E901F61F907D230073FD34 /* ClassFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassFetcher.swift; sourceTree = "<group>"; };
+		A3E901F91F90822C0073FD34 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		A3E901FC1F9084F60073FD34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A3E901FE1F90863C0073FD34 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		A3E902031F9110DA0073FD34 /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
 		E14839B72680816B1404E112 /* Pods_InQwire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InQwire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,10 +89,14 @@
 			isa = PBXGroup;
 			children = (
 				A3B03CD41F9033170030DC1E /* AppDelegate.swift */,
+				A3E902001F9086400073FD34 /* API */,
+				A3E901FB1F9082300073FD34 /* Models */,
+				A3E901F81F907D280073FD34 /* Protocols */,
 				A3E901EF1F904F840073FD34 /* Extensions */,
 				A3B03CE61F904F0F0030DC1E /* ViewControllers */,
 				A3B03CE71F904F270030DC1E /* Resources */,
 				A3B03CE01F9033170030DC1E /* Info.plist */,
+				A3E901F51F907A580073FD34 /* GoogleService-Info.plist */,
 			);
 			path = InQwire;
 			sourceTree = "<group>";
@@ -111,6 +127,32 @@
 				A3E901ED1F904F7F0073FD34 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A3E901F81F907D280073FD34 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A3E901F61F907D230073FD34 /* ClassFetcher.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A3E901FB1F9082300073FD34 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A3E901F91F90822C0073FD34 /* Course.swift */,
+				A3E902031F9110DA0073FD34 /* Lecture.swift */,
+				A3E901FC1F9084F60073FD34 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A3E902001F9086400073FD34 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A3E901FE1F90863C0073FD34 /* API.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		B63885168039A91F46F18257 /* Frameworks */ = {
@@ -184,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3B03CDF1F9033170030DC1E /* LaunchScreen.storyboard in Resources */,
+				A3E902021F9107C60073FD34 /* GoogleService-Info.plist in Resources */,
 				A3B03CDC1F9033170030DC1E /* Assets.xcassets in Resources */,
 				A3B03CDA1F9033170030DC1E /* Main.storyboard in Resources */,
 			);
@@ -233,10 +276,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-InQwire/Pods-InQwire-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -252,8 +297,13 @@
 			files = (
 				A3E901F31F9074CF0073FD34 /* PDFViewController.swift in Sources */,
 				A3E901EE1F904F7F0073FD34 /* UIView+Extensions.swift in Sources */,
+				A3E901FA1F90822C0073FD34 /* Course.swift in Sources */,
+				A3E901F71F907D230073FD34 /* ClassFetcher.swift in Sources */,
+				A3E902041F9110DA0073FD34 /* Lecture.swift in Sources */,
+				A3E901FD1F9084F60073FD34 /* User.swift in Sources */,
 				A3B03CD71F9033170030DC1E /* LandingViewController.swift in Sources */,
 				A3E901F11F9062430073FD34 /* InClassViewController.swift in Sources */,
+				A3E901FF1F90863C0073FD34 /* API.swift in Sources */,
 				A3B03CD51F9033170030DC1E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
