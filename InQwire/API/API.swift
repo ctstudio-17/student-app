@@ -5,6 +5,7 @@ private enum Path: String {
     case courses = "classes"
     case users
     case lectures
+    case confusions
     var value: String { return self.rawValue }
 }
 
@@ -25,8 +26,21 @@ struct API {
                     courses.append(course)
                 }
             }
-    
+
             completion(courses)
         }
+    }
+    
+    static func sendConfusionSignal(lectureId: String, studentId: String, timeStamp: Int,
+                                    completion: ((Bool) -> Void)?)
+    {
+        let path = API.database.child(Path.lectures.value).child(lectureId).child(Path.confusions.value)
+        let key = path.childByAutoId().key
+        let confusion: [String: Any] = [
+            "timeStamp": 1234,
+            "student": studentId,
+        ]
+
+        path.updateChildValues(["\(key)": confusion])
     }
 }

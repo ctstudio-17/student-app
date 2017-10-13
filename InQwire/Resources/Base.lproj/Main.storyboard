@@ -172,6 +172,9 @@
                                                         <real key="value" value="70"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="confused" destination="8rT-H9-6cP" eventType="touchUpInside" id="Vut-uD-umU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.28000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
