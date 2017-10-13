@@ -15,7 +15,7 @@
 		A3B03CDF1F9033170030DC1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B03CDD1F9033170030DC1E /* LaunchScreen.storyboard */; };
 		A3E901EE1F904F7F0073FD34 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901ED1F904F7F0073FD34 /* UIView+Extensions.swift */; };
 		A3E901F11F9062430073FD34 /* InClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F01F9062430073FD34 /* InClassViewController.swift */; };
-		A3E901F31F9074CF0073FD34 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F21F9074CF0073FD34 /* PDFViewController.swift */; };
+		A3E901F31F9074CF0073FD34 /* LectureRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F21F9074CF0073FD34 /* LectureRatingViewController.swift */; };
 		A3E901F71F907D230073FD34 /* ClassFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F61F907D230073FD34 /* ClassFetcher.swift */; };
 		A3E901FA1F90822C0073FD34 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F91F90822C0073FD34 /* Course.swift */; };
 		A3E901FD1F9084F60073FD34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901FC1F9084F60073FD34 /* User.swift */; };
@@ -36,7 +36,7 @@
 		A3B03CE01F9033170030DC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3E901ED1F904F7F0073FD34 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A3E901F01F9062430073FD34 /* InClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InClassViewController.swift; sourceTree = "<group>"; };
-		A3E901F21F9074CF0073FD34 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		A3E901F21F9074CF0073FD34 /* LectureRatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRatingViewController.swift; sourceTree = "<group>"; };
 		A3E901F51F907A580073FD34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3E901F61F907D230073FD34 /* ClassFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassFetcher.swift; sourceTree = "<group>"; };
 		A3E901F91F90822C0073FD34 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 			children = (
 				A3B03CD61F9033170030DC1E /* LandingViewController.swift */,
 				A3E901F01F9062430073FD34 /* InClassViewController.swift */,
-				A3E901F21F9074CF0073FD34 /* PDFViewController.swift */,
+				A3E901F21F9074CF0073FD34 /* LectureRatingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -295,7 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3E901F31F9074CF0073FD34 /* PDFViewController.swift in Sources */,
+				A3E901F31F9074CF0073FD34 /* LectureRatingViewController.swift in Sources */,
 				A3E901EE1F904F7F0073FD34 /* UIView+Extensions.swift in Sources */,
 				A3E901FA1F90822C0073FD34 /* Course.swift in Sources */,
 				A3E901F71F907D230073FD34 /* ClassFetcher.swift in Sources */,

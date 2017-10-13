@@ -37,10 +37,29 @@ struct API {
         let path = API.database.child(Path.lectures.value).child(lectureId).child(Path.confusions.value)
         let key = path.childByAutoId().key
         let confusion: [String: Any] = [
-            "timeStamp": 1234,
+            "timeStamp": timeStamp,
             "student": studentId,
         ]
 
-        path.updateChildValues(["\(key)": confusion])
+        path.updateChildValues(["\(key)": confusion]) { error, _ in
+            completion?(error == nil)
+        }
+    }
+    
+    static func observeProgress(forLecture lectureId: String, progressChanged: @escaping (Bool) -> Void)
+        -> DatabaseHandle
+    {
+        let path = API.database.child(Path.lectures.value).child(lectureId).child("in_progress")
+        let observer = path.observe(.value) { snapshot in
+            let isInProgress = snapshot.value as? Bool ?? false
+            progressChanged(isInProgress)
+        }
+
+        return observer
+    }
+    
+    static func removeProgressObserver(forLecture lectureId: String, observer: DatabaseHandle) {
+        let path = API.database.child(Path.lectures.value).child(lectureId).child("in_progress")
+        path.removeObserver(withHandle: observer)
     }
 }
