@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Black</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Classes-->
         <scene sceneID="0vd-Y3-zxP">
@@ -121,10 +126,77 @@
         <!--Slides Page View Controller-->
         <scene sceneID="Ps1-oP-WeF">
             <objects>
-                <pageViewController storyboardIdentifier="slidesPage" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="UYQ-aw-mgR" customClass="SlidesPageViewController" customModule="InQwire" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="slidesPage" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="2" navigationOrientation="horizontal" spineLocation="none" id="UYQ-aw-mgR" customClass="SlidesPageViewController" customModule="InQwire" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NWe-b9-I4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1138" y="817"/>
+        </scene>
+        <!--Single Slide View Controller-->
+        <scene sceneID="CBp-6L-hnR">
+            <objects>
+                <viewController storyboardIdentifier="singleSlide" id="m32-2p-9JW" customClass="SingleSlideViewController" customModule="InQwire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Jv-H0-o8E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="kNV-Kb-Dwa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2pm-hg-WGs">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="2pm-hg-WGs" firstAttribute="centerY" secondItem="kNV-Kb-Dwa" secondAttribute="centerY" id="Brt-eJ-HmI"/>
+                                    <constraint firstAttribute="bottom" secondItem="2pm-hg-WGs" secondAttribute="bottom" id="LN9-nr-urS"/>
+                                    <constraint firstItem="2pm-hg-WGs" firstAttribute="centerX" secondItem="kNV-Kb-Dwa" secondAttribute="centerX" id="WjT-CG-OOP"/>
+                                    <constraint firstItem="2pm-hg-WGs" firstAttribute="leading" secondItem="kNV-Kb-Dwa" secondAttribute="leading" id="mIY-ut-70E"/>
+                                    <constraint firstAttribute="trailing" secondItem="2pm-hg-WGs" secondAttribute="trailing" id="pxa-Ep-19V"/>
+                                    <constraint firstItem="2pm-hg-WGs" firstAttribute="top" secondItem="kNV-Kb-Dwa" secondAttribute="top" id="xNF-Sh-uyV"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="m32-2p-9JW" id="NN6-gv-PTx"/>
+                                </connections>
+                            </scrollView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rff-Un-ZSG">
+                                <rect key="frame" x="295" y="587" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="OVm-ct-r6B"/>
+                                    <constraint firstAttribute="width" constant="60" id="qqe-Lq-CYD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="26"/>
+                                <state key="normal" title="?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E9U-Ca-Whr" firstAttribute="bottom" secondItem="rff-Un-ZSG" secondAttribute="bottom" constant="20" id="CJK-Xo-WPt"/>
+                            <constraint firstItem="kNV-Kb-Dwa" firstAttribute="leading" secondItem="4Jv-H0-o8E" secondAttribute="leading" id="JXJ-M2-NRR"/>
+                            <constraint firstAttribute="bottom" secondItem="kNV-Kb-Dwa" secondAttribute="bottom" id="NZt-0D-lPo"/>
+                            <constraint firstItem="kNV-Kb-Dwa" firstAttribute="top" secondItem="4Jv-H0-o8E" secondAttribute="top" id="VI9-HH-aQO"/>
+                            <constraint firstItem="E9U-Ca-Whr" firstAttribute="trailing" secondItem="rff-Un-ZSG" secondAttribute="trailing" constant="20" id="Zpw-Q1-Qb8"/>
+                            <constraint firstAttribute="trailing" secondItem="kNV-Kb-Dwa" secondAttribute="trailing" id="v8o-de-Qzb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="E9U-Ca-Whr"/>
+                    </view>
+                    <connections>
+                        <outlet property="cornerButton" destination="rff-Un-ZSG" id="olg-fy-P5s"/>
+                        <outlet property="imageView" destination="2pm-hg-WGs" id="5sU-fR-DTG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w9d-oD-Rzr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1136.8" y="1494.6026986506747"/>
         </scene>
         <!--Applied Machine Learning-->
         <scene sceneID="U7i-E8-CZS">

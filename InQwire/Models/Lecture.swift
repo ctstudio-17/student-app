@@ -16,7 +16,7 @@ struct Lecture: Mappable {
 struct Presentation: Mappable {
     let currentImage: Int
     let title: String?
-    let images: [String]
+    let images: [URL]
     
     init(map: Mapper) throws {
         try currentImage = map.from("currentPage")

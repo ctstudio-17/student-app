@@ -15,6 +15,8 @@
 		A3E2DCCF1FBA46BA00703DA4 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2DCCE1FBA46BA00703DA4 /* CourseTableViewCell.swift */; };
 		A3E2DCD21FBA5E6500703DA4 /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2DCD11FBA5E6500703DA4 /* CourseListViewController.swift */; };
 		A3E2DCD41FBA73A400703DA4 /* SlidesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2DCD31FBA73A400703DA4 /* SlidesPageViewController.swift */; };
+		A3E2DCD61FBA9B7300703DA4 /* SingleSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2DCD51FBA9B7300703DA4 /* SingleSlideViewController.swift */; };
+		A3E2DCD81FBB651000703DA4 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2DCD71FBB651000703DA4 /* UserManager.swift */; };
 		A3E901EE1F904F7F0073FD34 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901ED1F904F7F0073FD34 /* UIView+Extensions.swift */; };
 		A3E901F11F9062430073FD34 /* InLectureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F01F9062430073FD34 /* InLectureViewController.swift */; };
 		A3E901F31F9074CF0073FD34 /* LectureRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F21F9074CF0073FD34 /* LectureRatingViewController.swift */; };
@@ -38,6 +40,8 @@
 		A3E2DCCE1FBA46BA00703DA4 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		A3E2DCD11FBA5E6500703DA4 /* CourseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
 		A3E2DCD31FBA73A400703DA4 /* SlidesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidesPageViewController.swift; sourceTree = "<group>"; };
+		A3E2DCD51FBA9B7300703DA4 /* SingleSlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSlideViewController.swift; sourceTree = "<group>"; };
+		A3E2DCD71FBB651000703DA4 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		A3E901ED1F904F7F0073FD34 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A3E901F01F9062430073FD34 /* InLectureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InLectureViewController.swift; sourceTree = "<group>"; };
 		A3E901F21F9074CF0073FD34 /* LectureRatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRatingViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				A3B03CD41F9033170030DC1E /* AppDelegate.swift */,
+				A3E2DCD91FBB651400703DA4 /* Managers */,
 				A3E902001F9086400073FD34 /* API */,
 				A3E901FB1F9082300073FD34 /* Models */,
 				A3E901F81F907D280073FD34 /* Protocols */,
@@ -111,6 +116,7 @@
 			children = (
 				A3E2DCD11FBA5E6500703DA4 /* CourseListViewController.swift */,
 				A3E2DCD31FBA73A400703DA4 /* SlidesPageViewController.swift */,
+				A3E2DCD51FBA9B7300703DA4 /* SingleSlideViewController.swift */,
 				A3E901F01F9062430073FD34 /* InLectureViewController.swift */,
 				A3E901F21F9074CF0073FD34 /* LectureRatingViewController.swift */,
 			);
@@ -133,6 +139,14 @@
 				A3E2DCCE1FBA46BA00703DA4 /* CourseTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A3E2DCD91FBB651400703DA4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A3E2DCD71FBB651000703DA4 /* UserManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		A3E901EF1F904F840073FD34 /* Extensions */ = {
@@ -313,7 +327,9 @@
 			files = (
 				A3E901F31F9074CF0073FD34 /* LectureRatingViewController.swift in Sources */,
 				A3E901EE1F904F7F0073FD34 /* UIView+Extensions.swift in Sources */,
+				A3E2DCD81FBB651000703DA4 /* UserManager.swift in Sources */,
 				A3E901FA1F90822C0073FD34 /* Course.swift in Sources */,
+				A3E2DCD61FBA9B7300703DA4 /* SingleSlideViewController.swift in Sources */,
 				A3E901F71F907D230073FD34 /* ClassFetcher.swift in Sources */,
 				A3E902041F9110DA0073FD34 /* Lecture.swift in Sources */,
 				A3E2DCD41FBA73A400703DA4 /* SlidesPageViewController.swift in Sources */,
