@@ -1,13 +1,12 @@
 import UIKit
 import Firebase
-import UICircularProgressRing
 
-private let kConfusionInterval: TimeInterval = 60 * 2 // 2 mins
-
-final class InClassViewController: UIViewController {
+final class InLectureViewController: UIViewController {
     private var lectureProgressObserver: DatabaseHandle?
-    @IBOutlet private var progressView: UICircularProgressRingView!
     @IBOutlet private var confuseButton: UIButton!
+    
+    /// Course this lecture belongs to
+    var courseId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,22 +46,8 @@ final class InClassViewController: UIViewController {
     }
     
     @IBAction private func confused() {
-//        if !self.confuseButton.isEnabled {
-//            return
-//        }
-//        
-//        self.confuseButton.isEnabled = false
-//        self.progressView.value = 0
-//        self.progressView.setProgress(value: 100, animationDuration: kConfusionInterval) { [weak self] in
-//            self?.confuseButton.isEnabled = true
-//        }
-
         let time = Int(Date().timeIntervalSince1970)
         API.sendConfusionSignal(lectureId: "1", studentId: self.randomStudentId(), timeStamp: time,
                                 completion: nil)
-    }
-    
-    @IBAction private func close() {
-        self.dismiss(animated: true, completion: nil)
     }
 }

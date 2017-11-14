@@ -2,13 +2,15 @@ import Foundation
 import Mapper
 
 struct Course: Mappable {
+    let id: String
     let number: String
-    let professorId: String
-    let lectureIds: [Int]
+    let title: String
+    let professorId: String?
 
     init(map: Mapper) throws {
+        try id = map.from("id")
         try number = map.from("class_number")
-        try lectureIds = map.from("lectures")
-        try professorId = map.from("professor")
+        try title = map.from("class_title")
+        professorId = map.optionalFrom("professor")
     }
 }

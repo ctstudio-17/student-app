@@ -5,5 +5,5 @@ target 'InQwire' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'ModelMapper'
-  pod 'UICircularProgressRing'
+  pod 'SDWebImage', '~> 4.0'
 end

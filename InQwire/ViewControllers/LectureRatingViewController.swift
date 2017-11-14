@@ -34,7 +34,8 @@ class LectureRatingViewController: UIViewController {
         let inset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
         self.scrollView.contentInset = inset
         self.scrollView.scrollIndicatorInsets = inset
-        self.scrollView.scrollRectToVisible(CGRect(x: 0, y: self.textViewContainer.frame.maxY, width: 1, height: 1), animated: true)
+        self.scrollView.scrollRectToVisible(CGRect(x: 0, y: self.textViewContainer.frame.maxY, width: 1,
+                                                   height: 1), animated: true)
     }
 
     @objc

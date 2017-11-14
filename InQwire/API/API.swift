@@ -19,15 +19,53 @@ struct API {
         API.database.child(Path.courses.value).observeSingleEvent(of: .value) { data in
             var courses: [Course] = []
             for child in data.children {
-                if let snapshot = child as? DataSnapshot,
-                    let value = snapshot.value as? NSDictionary,
-                    let course = Course.from(value)
+                guard let snapshot = child as? DataSnapshot, let value = snapshot.value as? NSDictionary else
                 {
+                    return
+                }
+                
+                value.setValue(snapshot.key, forKey: "id")
+                if let course = Course.from(value) {
                     courses.append(course)
                 }
             }
 
             completion(courses)
+        }
+    }
+    
+    /// Get latest lecture data
+    ///
+    /// - Parameters:
+    ///   - courseId: Course this lecture belongs to
+    ///   - completion: Closure called upon completion
+    static func getLatestLecture(forCourse courseId: String, completion: @escaping (Lecture?) -> Void) {
+        API.database.child(Path.courses.value).child(courseId).child("lectures")
+            .queryLimited(toLast: 1).observeSingleEvent(of: .value)
+        { data in
+            guard let value = data.value as? NSDictionary,
+                let lectureId = value.allKeys.first as? String,
+                let lectureData = value.value(forKey: lectureId) as? NSDictionary else
+            {
+                return completion(nil)
+            }
+        
+            lectureData.setValue(lectureId, forKey: "id")
+            guard let presentation = lectureData.value(forKey: "presentation") as? NSDictionary,
+                let slides = presentation.value(forKey: "slides") as? NSArray else
+            {
+                return completion(Lecture.from(lectureData))
+            }
+            
+            var imageURLs = [String]()
+            for slide in slides {
+                if let UrlString = (slide as? NSDictionary)?.value(forKey: "thumbnailUrl") as? String {
+                    imageURLs.append(UrlString)
+                }
+            }
+            
+            presentation.setValue(imageURLs, forKey: "images")
+            return completion(Lecture.from(lectureData))
         }
     }
     

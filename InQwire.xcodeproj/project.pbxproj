@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		4ED81C5675AA67C815AF46CD /* Pods_InQwire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14839B72680816B1404E112 /* Pods_InQwire.framework */; };
 		A3B03CD51F9033170030DC1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B03CD41F9033170030DC1E /* AppDelegate.swift */; };
-		A3B03CD71F9033170030DC1E /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B03CD61F9033170030DC1E /* LandingViewController.swift */; };
 		A3B03CDA1F9033170030DC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B03CD81F9033170030DC1E /* Main.storyboard */; };
 		A3B03CDC1F9033170030DC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3B03CDB1F9033170030DC1E /* Assets.xcassets */; };
 		A3B03CDF1F9033170030DC1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B03CDD1F9033170030DC1E /* LaunchScreen.storyboard */; };
+		A3E2DCCF1FBA46BA00703DA4 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2DCCE1FBA46BA00703DA4 /* CourseTableViewCell.swift */; };
+		A3E2DCD21FBA5E6500703DA4 /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2DCD11FBA5E6500703DA4 /* CourseListViewController.swift */; };
+		A3E2DCD41FBA73A400703DA4 /* SlidesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2DCD31FBA73A400703DA4 /* SlidesPageViewController.swift */; };
 		A3E901EE1F904F7F0073FD34 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901ED1F904F7F0073FD34 /* UIView+Extensions.swift */; };
-		A3E901F11F9062430073FD34 /* InClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F01F9062430073FD34 /* InClassViewController.swift */; };
+		A3E901F11F9062430073FD34 /* InLectureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F01F9062430073FD34 /* InLectureViewController.swift */; };
 		A3E901F31F9074CF0073FD34 /* LectureRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F21F9074CF0073FD34 /* LectureRatingViewController.swift */; };
 		A3E901F71F907D230073FD34 /* ClassFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F61F907D230073FD34 /* ClassFetcher.swift */; };
 		A3E901FA1F90822C0073FD34 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F91F90822C0073FD34 /* Course.swift */; };
@@ -29,13 +31,15 @@
 		7DD15EBC5735ABBC41944A3C /* Pods-InQwire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InQwire.release.xcconfig"; path = "Pods/Target Support Files/Pods-InQwire/Pods-InQwire.release.xcconfig"; sourceTree = "<group>"; };
 		A3B03CD11F9033170030DC1E /* InQwire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InQwire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B03CD41F9033170030DC1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A3B03CD61F9033170030DC1E /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		A3B03CD91F9033170030DC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3B03CDB1F9033170030DC1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3B03CDE1F9033170030DC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3B03CE01F9033170030DC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3E2DCCE1FBA46BA00703DA4 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
+		A3E2DCD11FBA5E6500703DA4 /* CourseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
+		A3E2DCD31FBA73A400703DA4 /* SlidesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidesPageViewController.swift; sourceTree = "<group>"; };
 		A3E901ED1F904F7F0073FD34 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		A3E901F01F9062430073FD34 /* InClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InClassViewController.swift; sourceTree = "<group>"; };
+		A3E901F01F9062430073FD34 /* InLectureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InLectureViewController.swift; sourceTree = "<group>"; };
 		A3E901F21F9074CF0073FD34 /* LectureRatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRatingViewController.swift; sourceTree = "<group>"; };
 		A3E901F51F907A580073FD34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3E901F61F907D230073FD34 /* ClassFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassFetcher.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 				A3E901FB1F9082300073FD34 /* Models */,
 				A3E901F81F907D280073FD34 /* Protocols */,
 				A3E901EF1F904F840073FD34 /* Extensions */,
+				A3E2DCD01FBA46BF00703DA4 /* Views */,
 				A3B03CE61F904F0F0030DC1E /* ViewControllers */,
 				A3B03CE71F904F270030DC1E /* Resources */,
 				A3B03CE01F9033170030DC1E /* Info.plist */,
@@ -104,8 +109,9 @@
 		A3B03CE61F904F0F0030DC1E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A3B03CD61F9033170030DC1E /* LandingViewController.swift */,
-				A3E901F01F9062430073FD34 /* InClassViewController.swift */,
+				A3E2DCD11FBA5E6500703DA4 /* CourseListViewController.swift */,
+				A3E2DCD31FBA73A400703DA4 /* SlidesPageViewController.swift */,
+				A3E901F01F9062430073FD34 /* InLectureViewController.swift */,
 				A3E901F21F9074CF0073FD34 /* LectureRatingViewController.swift */,
 			);
 			path = ViewControllers;
@@ -119,6 +125,14 @@
 				A3B03CDD1F9033170030DC1E /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		A3E2DCD01FBA46BF00703DA4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A3E2DCCE1FBA46BA00703DA4 /* CourseTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A3E901EF1F904F840073FD34 /* Extensions */ = {
@@ -277,13 +291,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-InQwire/Pods-InQwire-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
-				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -302,11 +316,13 @@
 				A3E901FA1F90822C0073FD34 /* Course.swift in Sources */,
 				A3E901F71F907D230073FD34 /* ClassFetcher.swift in Sources */,
 				A3E902041F9110DA0073FD34 /* Lecture.swift in Sources */,
+				A3E2DCD41FBA73A400703DA4 /* SlidesPageViewController.swift in Sources */,
+				A3E2DCD21FBA5E6500703DA4 /* CourseListViewController.swift in Sources */,
 				A3E901FD1F9084F60073FD34 /* User.swift in Sources */,
-				A3B03CD71F9033170030DC1E /* LandingViewController.swift in Sources */,
-				A3E901F11F9062430073FD34 /* InClassViewController.swift in Sources */,
+				A3E901F11F9062430073FD34 /* InLectureViewController.swift in Sources */,
 				A3E901FF1F90863C0073FD34 /* API.swift in Sources */,
 				A3B03CD51F9033170030DC1E /* AppDelegate.swift in Sources */,
+				A3E2DCCF1FBA46BA00703DA4 /* CourseTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
