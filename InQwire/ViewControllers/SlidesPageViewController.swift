@@ -18,18 +18,21 @@ final class SlidesPageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
+        self.showPlaceholder()
         self.getLatestLecture()
     }
     
     private func getLatestLecture() {
         guard let courseId = self.courseId else {
-            return
+            return self.showPlaceholder(withState: .notAvailable,
+                                        title: "Error getting lecture, please try again later")
         }
         
         API.getLatestLecture(forCourse: courseId) { [weak self] lecture in
-            let showPlaceholder = {}
             guard let lecture = lecture, lecture.isInProgress == true else {
-                return showPlaceholder()
+                self?.showPlaceholder(withState: .notAvailable,
+                                      title: "No new lecture, please come back later")
+                return
             }
             
             self?.lecture = lecture
@@ -45,11 +48,24 @@ final class SlidesPageViewController: UIPageViewController {
         self.imageURLs = presentation.images
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "singleSlide")
         if let firstViewController = viewController as? SingleSlideViewController,
-            let imageURL = self.imageURLs?.first, let lectureId = self.lecture?.id
+            let imageURL = self.imageURLs?.first, let lectureId = self.lecture?.id,
+            let courseId = self.courseId
         {
-            firstViewController.set(imageURL: imageURL, slideIndex: 0, lectureId: lectureId)
+            firstViewController.set(imageURL: imageURL, slideIndex: 0, lectureId: lectureId,
+                                    courseId: courseId)
             self.setViewControllers([firstViewController], direction: .forward, animated: false)
         }
+    }
+    
+    private func showPlaceholder(withState state: PlaceholderState = .loading, title: String? = nil) {
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "placeholder"),
+            let placeholder = viewController as? LecturePlaceholderViewController else
+        {
+            return
+        }
+        
+        placeholder.set(state: state, title: title)
+        self.setViewControllers([placeholder], direction: .forward, animated: false)
     }
 }
 
@@ -81,9 +97,11 @@ extension SlidesPageViewController: UIPageViewControllerDataSource {
         }
         
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "singleSlide")
-        if let imageURL = self.imageURLs?[nextIndex], let lectureId = self.lecture?.id {
+        if let imageURL = self.imageURLs?[nextIndex], let lectureId = self.lecture?.id,
+            let courseId = self.courseId
+        {
             (viewController as? SingleSlideViewController)?.set(imageURL: imageURL, slideIndex: nextIndex,
-                                                                lectureId: lectureId)
+                                                                lectureId: lectureId, courseId: courseId)
         }
 
         return viewController

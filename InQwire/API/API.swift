@@ -40,7 +40,7 @@ struct API {
     ///   - courseId: Course this lecture belongs to
     ///   - completion: Closure called upon completion
     static func getLatestLecture(forCourse courseId: String, completion: @escaping (Lecture?) -> Void) {
-        API.database.child(Path.courses.value).child(courseId).child("lectures")
+        API.database.child(Path.courses.value).child(courseId).child(Path.lectures.value)
             .queryLimited(toLast: 1).observeSingleEvent(of: .value)
         { data in
             guard let value = data.value as? NSDictionary,
@@ -69,17 +69,20 @@ struct API {
         }
     }
     
-    static func sendConfusionSignal(lectureId: String, studentId: String, timeStamp: Int,
-                                    completion: ((Bool) -> Void)?)
+    static func sendConfusionSignal(fromStudent studentId: String, aboutSlide slideNumber: Int? = nil,
+                                    toLecture lectureId: String, forCourse courseId: String,
+                                    timeStamp: Int, completion: ((Bool) -> Void)?)
     {
-        let path = API.database.child(Path.lectures.value).child(lectureId).child(Path.confusions.value)
-        let key = path.childByAutoId().key
-        let confusion: [String: Any] = [
+        let path = API.database.child(Path.courses.value).child(courseId).child(Path.lectures.value)
+            .child(lectureId).child(Path.confusions.value)
+        var value: [String: Any] = [
             "timeStamp": timeStamp,
             "student": studentId,
         ]
-
-        path.updateChildValues(["\(key)": confusion]) { error, _ in
+        
+        value["slide_number"] = slideNumber
+        let key = path.childByAutoId().key
+        path.updateChildValues([key: value]) { error, _ in
             completion?(error == nil)
         }
     }

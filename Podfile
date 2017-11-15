@@ -6,4 +6,5 @@ target 'InQwire' do
   pod 'Firebase/Database'
   pod 'ModelMapper'
   pod 'SDWebImage', '~> 4.0'
+  pod 'SnapKit', '~> 4.0.0'
 end

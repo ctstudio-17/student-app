@@ -9,11 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Avenir.ttc">
-            <string>Avenir-Black</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Classes-->
         <scene sceneID="0vd-Y3-zxP">
@@ -160,31 +155,35 @@
                                     <outlet property="delegate" destination="m32-2p-9JW" id="NN6-gv-PTx"/>
                                 </connections>
                             </scrollView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rff-Un-ZSG">
-                                <rect key="frame" x="295" y="587" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rff-Un-ZSG" customClass="ConfusionButton" customModule="InQwire" customModuleProvider="target">
+                                <rect key="frame" x="283" y="575" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="OVm-ct-r6B"/>
-                                    <constraint firstAttribute="width" constant="60" id="qqe-Lq-CYD"/>
+                                    <constraint firstAttribute="height" constant="80" id="OVm-ct-r6B"/>
+                                    <constraint firstAttribute="width" constant="80" id="qqe-Lq-CYD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="26"/>
-                                <state key="normal" title="?">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <state key="normal" title="🤔" backgroundImage="Rounded shadow">
+                                    <color key="titleColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="30"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="sentTitle" value="SENT!"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="idleTitle" value="🤔"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cornerButtonPressedWithSender:" destination="m32-2p-9JW" eventType="touchUpInside" id="mCn-Yq-chq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="E9U-Ca-Whr" firstAttribute="bottom" secondItem="rff-Un-ZSG" secondAttribute="bottom" constant="20" id="CJK-Xo-WPt"/>
+                            <constraint firstItem="E9U-Ca-Whr" firstAttribute="bottom" secondItem="rff-Un-ZSG" secondAttribute="bottom" constant="12" id="CJK-Xo-WPt"/>
                             <constraint firstItem="kNV-Kb-Dwa" firstAttribute="leading" secondItem="4Jv-H0-o8E" secondAttribute="leading" id="JXJ-M2-NRR"/>
                             <constraint firstAttribute="bottom" secondItem="kNV-Kb-Dwa" secondAttribute="bottom" id="NZt-0D-lPo"/>
                             <constraint firstItem="kNV-Kb-Dwa" firstAttribute="top" secondItem="4Jv-H0-o8E" secondAttribute="top" id="VI9-HH-aQO"/>
-                            <constraint firstItem="E9U-Ca-Whr" firstAttribute="trailing" secondItem="rff-Un-ZSG" secondAttribute="trailing" constant="20" id="Zpw-Q1-Qb8"/>
+                            <constraint firstItem="E9U-Ca-Whr" firstAttribute="trailing" secondItem="rff-Un-ZSG" secondAttribute="trailing" constant="12" id="Zpw-Q1-Qb8"/>
                             <constraint firstAttribute="trailing" secondItem="kNV-Kb-Dwa" secondAttribute="trailing" id="v8o-de-Qzb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E9U-Ca-Whr"/>
@@ -197,6 +196,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w9d-oD-Rzr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1136.8" y="1494.6026986506747"/>
+        </scene>
+        <!--Loading-->
+        <scene sceneID="VHx-Rz-I3J">
+            <objects>
+                <viewController storyboardIdentifier="placeholder" title="Loading" id="lZy-8P-VI4" customClass="LecturePlaceholderViewController" customModule="InQwire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hcQ-m1-pmw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Pab-3u-AAa">
+                                <rect key="frame" x="178" y="293.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading lecture" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Le-Ov-DX0">
+                                <rect key="frame" x="30" y="325.5" width="316" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7Le-Ov-DX0" firstAttribute="leading" secondItem="TWV-Kd-k8W" secondAttribute="leading" constant="30" id="LL1-Xm-SdX"/>
+                            <constraint firstItem="7Le-Ov-DX0" firstAttribute="centerX" secondItem="hcQ-m1-pmw" secondAttribute="centerX" id="qqk-jR-67C"/>
+                            <constraint firstItem="Pab-3u-AAa" firstAttribute="centerY" secondItem="hcQ-m1-pmw" secondAttribute="centerY" constant="-30" id="rut-fi-AWO"/>
+                            <constraint firstItem="7Le-Ov-DX0" firstAttribute="top" secondItem="Pab-3u-AAa" secondAttribute="bottom" constant="12" id="sHG-sf-id6"/>
+                            <constraint firstItem="Pab-3u-AAa" firstAttribute="centerX" secondItem="hcQ-m1-pmw" secondAttribute="centerX" id="sl1-AP-dXa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TWV-Kd-k8W"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="spinner" destination="Pab-3u-AAa" id="NMV-SH-HUY"/>
+                        <outlet property="titleLabel" destination="7Le-Ov-DX0" id="u1w-qT-bJv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbz-5A-Fwy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="1497.3013493253375"/>
         </scene>
         <!--Applied Machine Learning-->
         <scene sceneID="U7i-E8-CZS">
@@ -565,6 +602,7 @@
     <resources>
         <image name="Deck" width="395" height="255"/>
         <image name="Professor" width="136" height="136"/>
+        <image name="Rounded shadow" width="86" height="86"/>
         <image name="Star" width="41" height="40"/>
         <image name="Star - selected" width="41" height="40"/>
     </resources>
