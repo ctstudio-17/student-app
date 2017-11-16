@@ -87,10 +87,12 @@ struct API {
         }
     }
     
-    static func observeProgress(forLecture lectureId: String, progressChanged: @escaping (Bool) -> Void)
+    static func observeProgress(ofLecture lectureId: String, fromCourse courseId: String,
+                                progressChanged: @escaping (Bool) -> Void)
         -> DatabaseHandle
     {
-        let path = API.database.child(Path.lectures.value).child(lectureId).child("in_progress")
+        let path = API.database.child(Path.courses.value).child(courseId).child(Path.lectures.value)
+            .child(lectureId).child("in_progress")
         let observer = path.observe(.value) { snapshot in
             let isInProgress = snapshot.value as? Bool ?? false
             progressChanged(isInProgress)
@@ -99,15 +101,19 @@ struct API {
         return observer
     }
     
-    static func removeProgressObserver(forLecture lectureId: String, observer: DatabaseHandle) {
-        let path = API.database.child(Path.lectures.value).child(lectureId).child("in_progress")
+    static func removeProgressObserver(forLecture lectureId: String, ofCourse courseId: String,
+                                       observer: DatabaseHandle)
+    {
+        let path = API.database.child(Path.courses.value).child(courseId).child(Path.lectures.value)
+            .child(lectureId).child("in_progress")
         path.removeObserver(withHandle: observer)
     }
     
-    static func rate(lectureId: String, studentId: String, ratings: Int, feedback: String,
-                     completion: ((Bool) -> Void)?)
+    static func rate(lectureId: String, from studentId: String, courseId: String, ratings: Int,
+                     feedback: String, completion: ((Bool) -> Void)?)
     {
-        let path = API.database.child(Path.lectures.value).child(lectureId).child("feedback")
+        let path = API.database.child(Path.courses.value).child(courseId).child(Path.lectures.value)
+            .child(lectureId).child("feedback")
         let key = path.childByAutoId().key
         let feedback: [String: Any] = [
             "content": feedback,

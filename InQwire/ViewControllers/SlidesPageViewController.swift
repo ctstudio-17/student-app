@@ -1,10 +1,11 @@
 import UIKit
 import SDWebImage
+import Firebase
 
 final class SlidesPageViewController: UIPageViewController {
     
-    /// The ID of this course
-    var courseId: String? {
+    /// Course to populate UI with
+    var course: Course? {
         didSet {
             if (self.isViewLoaded) {
                 self.getLatestLecture()
@@ -14,16 +15,27 @@ final class SlidesPageViewController: UIPageViewController {
     
     private var imageURLs: [URL]?
     private var lecture: Lecture?
+    private var lectureProgressObserver: DatabaseHandle?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
-        self.showPlaceholder()
+        self.showPlaceholder(withState: .loading, title: "Loading lecture")
         self.getLatestLecture()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let observer = self.lectureProgressObserver, let lectureId = self.lecture?.id,
+            let courseId = self.course?.id
+        {
+            API.removeProgressObserver(forLecture: lectureId, ofCourse: courseId, observer: observer)
+            self.lectureProgressObserver = nil
+        }
+    }
+    
     private func getLatestLecture() {
-        guard let courseId = self.courseId else {
+        guard let courseId = self.course?.id else {
             return self.showPlaceholder(withState: .notAvailable,
                                         title: "Error getting lecture, please try again later")
         }
@@ -36,12 +48,30 @@ final class SlidesPageViewController: UIPageViewController {
             }
             
             self?.lecture = lecture
+            self?.observe(lectureId: lecture.id, courseId: courseId)
             if let presentation = lecture.presentation {
                 self?.show(presentation: presentation)
-            } else {
-                // Show timer
             }
         }
+    }
+    
+    private func observe(lectureId: String, courseId: String) {
+        self.lectureProgressObserver = API.observeProgress(ofLecture: lectureId,
+                                                           fromCourse: courseId,
+                                                           progressChanged:
+        { [weak self] isInProgress in
+            if isInProgress {
+                return
+            }
+            
+            if let viewController = self?.storyboard?.instantiateViewController(withIdentifier: "feedback"),
+                let feedback = viewController as? LectureRatingViewController
+            {
+                feedback.course = self?.course
+                feedback.lectureId = lectureId
+                self?.show(feedback, sender: nil)
+            }
+        })
     }
     
     private func show(presentation: Presentation) {
@@ -49,7 +79,7 @@ final class SlidesPageViewController: UIPageViewController {
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "singleSlide")
         if let firstViewController = viewController as? SingleSlideViewController,
             let imageURL = self.imageURLs?.first, let lectureId = self.lecture?.id,
-            let courseId = self.courseId
+            let courseId = self.course?.id
         {
             firstViewController.set(imageURL: imageURL, slideIndex: 0, lectureId: lectureId,
                                     courseId: courseId)
@@ -57,7 +87,7 @@ final class SlidesPageViewController: UIPageViewController {
         }
     }
     
-    private func showPlaceholder(withState state: PlaceholderState = .loading, title: String? = nil) {
+    private func showPlaceholder(withState state: PlaceholderState = .loading, title: String?) {
         guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "placeholder"),
             let placeholder = viewController as? LecturePlaceholderViewController else
         {
@@ -98,7 +128,7 @@ extension SlidesPageViewController: UIPageViewControllerDataSource {
         
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "singleSlide")
         if let imageURL = self.imageURLs?[nextIndex], let lectureId = self.lecture?.id,
-            let courseId = self.courseId
+            let courseId = self.course?.id
         {
             (viewController as? SingleSlideViewController)?.set(imageURL: imageURL, slideIndex: nextIndex,
                                                                 lectureId: lectureId, courseId: courseId)

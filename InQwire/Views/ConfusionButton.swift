@@ -1,5 +1,4 @@
 import UIKit
-import SnapKit
 
 enum ConfusionButtonState {
     case idle
@@ -17,8 +16,8 @@ final class ConfusionButton: UIButton {
         super.awakeFromNib()
         let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         spinner.hidesWhenStopped = true
+        spinner.center = CGPoint.init(x: self.bounds.width / 2, y: self.bounds.height / 2)
         self.addSubview(spinner)
-        spinner.snp.makeConstraints { $0.center.equalToSuperview() }
         self.spinner = spinner
     }
     

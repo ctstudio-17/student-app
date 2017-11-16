@@ -3,13 +3,25 @@ import PDFKit
 
 class LectureRatingViewController: UIViewController {
     
+    @IBOutlet private var courseTitleLabel: UILabel!
     @IBOutlet private var starsView: UIStackView!
     @IBOutlet private var scrollView: UIScrollView!
     @IBOutlet private var textView: UITextView!
     @IBOutlet private var textViewContainer: UIView!
+    
+    var course: Course? {
+        didSet {
+            if self.isViewLoaded {
+                self.courseTitleLabel.text = "Class: " + (self.course?.title ?? "" )
+            }
+        }
+    }
+    
+    var lectureId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.courseTitleLabel.text = "Class: " + (self.course?.title ?? "")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,15 +77,17 @@ class LectureRatingViewController: UIViewController {
             let isSelected = (button as? UIButton)?.isSelected ?? false
             ratings += isSelected ? 1 : 0
         }
-
-        API.rate(lectureId: "1", studentId: "fp73", ratings: ratings, feedback: self.textView.text)
-        { [weak self] _ in
-            self?.navigationController?.dismiss(animated: true, completion: nil)
+        
+        if let lectureId = self.lectureId, let courseId = self.course?.id {
+            API.rate(lectureId: lectureId, from: UserManager.currentUserId, courseId: courseId, ratings: ratings, feedback: self.textView.text, completion:
+            { [weak self] _ in
+                self?.navigationController?.popToRootViewController(animated: true)
+            })
         }
     }
     
     @IBAction private func close() {
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
 

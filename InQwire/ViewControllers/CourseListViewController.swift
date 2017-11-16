@@ -16,9 +16,18 @@ final class CourseListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        API.getAllCourses { [weak self] courses in
+        self.getCourses()
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(getCourses(_:)), for: .valueChanged)
+        self.tableView.addSubview(refreshControl)
+    }
+    
+    @objc
+    private func getCourses(_ refreshControl: UIRefreshControl? = nil) {
+        API.getAllCourses { [weak self, refreshControl] courses in
             self?.courses = courses
             self?.spinner.stopAnimating()
+            refreshControl?.endRefreshing()
         }
     }
 }
@@ -46,8 +55,7 @@ extension CourseListViewController: UITableViewDelegate {
             return
         }
         
-        let course = self.courses[indexPath.row]
-        pageViewController.courseId = course.id
+        pageViewController.course = self.courses[indexPath.row]
         self.show(pageViewController, sender: nil)
     }
 }
