@@ -12,7 +12,7 @@ final class SingleSlideViewController: UIViewController {
         }
     }
     
-    private(set) var index: Int?
+    private(set) var slideIndex: Int?
     private var lectureId: String?
     private var courseId: String?
     
@@ -25,7 +25,7 @@ final class SingleSlideViewController: UIViewController {
     
     func set(imageURL: URL, slideIndex: Int, lectureId: String, courseId: String) {
         self.imageURL = imageURL
-        self.index = slideIndex
+        self.slideIndex = slideIndex
         self.lectureId = lectureId
         self.courseId = courseId
     }
@@ -51,7 +51,7 @@ final class SingleSlideViewController: UIViewController {
 
         let now = Int(Date().timeIntervalSince1970)
         sender.transition(to: .sending)
-        API.sendConfusionSignal(fromStudent: UserManager.currentUserId, aboutSlide: index,
+        API.sendConfusionSignal(fromStudent: UserManager.currentUserId, aboutSlide: self.slideIndex,
                                 toLecture: lectureId, forCourse: courseId, timeStamp: now)
         { [weak sender] isSuccess in
             if !isSuccess {
@@ -63,6 +63,21 @@ final class SingleSlideViewController: UIViewController {
             Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { _ in
                 sender?.transition(to: .idle)
             })
+        }
+    }
+    
+    @IBAction private func cornerButtonDraggedOutside(sender: ConfusionButton) {
+        if self.presentingViewController != nil {
+            return
+        }
+
+        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "confuseModal"),
+            let model = viewController as? ConfuseModalViewController
+        {
+            model.courseId = self.courseId
+            model.lectureId = self.lectureId
+            model.slideIndex = self.slideIndex
+            model.show(from: self)
         }
     }
 }

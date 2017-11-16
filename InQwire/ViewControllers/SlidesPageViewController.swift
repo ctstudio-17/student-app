@@ -9,6 +9,7 @@ final class SlidesPageViewController: UIPageViewController {
         didSet {
             if (self.isViewLoaded) {
                 self.getLatestLecture()
+                self.title = self.course?.number
             }
         }
     }
@@ -22,6 +23,7 @@ final class SlidesPageViewController: UIPageViewController {
         self.dataSource = self
         self.showPlaceholder(withState: .loading, title: "Loading lecture")
         self.getLatestLecture()
+        self.title = self.course?.number
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -117,7 +119,7 @@ extension SlidesPageViewController: UIPageViewControllerDataSource {
     private func nextViewController(forDirection direction: UIPageViewControllerNavigationDirection,
                                     currentViewController: UIViewController) -> UIViewController?
     {
-        guard let currentIndex = (currentViewController as? SingleSlideViewController)?.index else {
+        guard let currentIndex = (currentViewController as? SingleSlideViewController)?.slideIndex else {
             return nil
         }
         

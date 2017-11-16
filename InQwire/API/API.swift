@@ -70,8 +70,8 @@ struct API {
     }
     
     static func sendConfusionSignal(fromStudent studentId: String, aboutSlide slideNumber: Int? = nil,
-                                    toLecture lectureId: String, forCourse courseId: String,
-                                    timeStamp: Int, completion: ((Bool) -> Void)?)
+                                    withComment comment: String? = nil, toLecture lectureId: String,
+                                    forCourse courseId: String, timeStamp: Int, completion: ((Bool) -> Void)?)
     {
         let path = API.database.child(Path.courses.value).child(courseId).child(Path.lectures.value)
             .child(lectureId).child(Path.confusions.value)
@@ -81,6 +81,7 @@ struct API {
         ]
         
         value["slide_number"] = slideNumber
+        value["comment"] = comment
         let key = path.childByAutoId().key
         path.updateChildValues([key: value]) { error, _ in
             completion?(error == nil)

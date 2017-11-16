@@ -162,7 +162,7 @@
                                     <constraint firstAttribute="width" constant="80" id="qqe-Lq-CYD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <state key="normal" title="🤔" backgroundImage="Rounded shadow">
+                                <state key="normal" title="😕" backgroundImage="Rounded shadow">
                                     <color key="titleColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -170,9 +170,10 @@
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="sentTitle" value="SENT!"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="idleTitle" value="🤔"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="idleTitle" value="😕"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="cornerButtonDraggedOutsideWithSender:" destination="m32-2p-9JW" eventType="touchDragOutside" id="ZVH-cy-MP0"/>
                                     <action selector="cornerButtonPressedWithSender:" destination="m32-2p-9JW" eventType="touchUpInside" id="mCn-Yq-chq"/>
                                 </connections>
                             </button>
@@ -234,6 +235,114 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbz-5A-Fwy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1809" y="1495"/>
+        </scene>
+        <!--Confuse Modal View Controller-->
+        <scene sceneID="kpq-8T-v3v">
+            <objects>
+                <viewController storyboardIdentifier="confuseModal" modalPresentationStyle="overFullScreen" id="Qoi-Af-8dX" customClass="ConfuseModalViewController" customModule="InQwire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JQh-7m-SHr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJL-We-pcE" userLabel="Dimmer">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTc-1b-eXa" userLabel="Model">
+                                        <rect key="frame" x="40" y="243" width="294" height="180"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rh-hi-8zq">
+                                                <rect key="frame" x="10" y="10" width="274" height="110"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Qoi-Af-8dX" id="ii8-78-NFh"/>
+                                                </connections>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kj7-NR-JlD" customClass="SendButton" customModule="InQwire" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="130" width="294" height="50"/>
+                                                <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="ddX-wB-1on"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                <state key="normal" title="Send">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultColor">
+                                                        <color key="value" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="successColor">
+                                                        <color key="value" red="0.49411764705882355" green="0.82745098039215681" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="failureColor">
+                                                        <color key="value" red="0.56862745100000001" green="0.61568627450000002" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="defaultTitle" value="Send"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="successTitle" value="Sent"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="failureTitle" value="Retry"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="sendWithSender:" destination="Qoi-Af-8dX" eventType="touchUpInside" id="JxA-Ed-ocL"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm confused about..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsp-mO-cLG" userLabel="Placeholder">
+                                                <rect key="frame" x="15" y="18" width="161" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.76470588240000004" green="0.7843137255" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="jsp-mO-cLG" firstAttribute="top" secondItem="eTc-1b-eXa" secondAttribute="top" constant="18" id="1Hp-KO-6cy"/>
+                                            <constraint firstAttribute="trailing" secondItem="9rh-hi-8zq" secondAttribute="trailing" constant="10" id="6L0-hE-V6Y"/>
+                                            <constraint firstAttribute="trailing" secondItem="kj7-NR-JlD" secondAttribute="trailing" id="IGZ-pD-GKa"/>
+                                            <constraint firstItem="kj7-NR-JlD" firstAttribute="top" secondItem="9rh-hi-8zq" secondAttribute="bottom" constant="10" id="Ktd-2Q-Kw4"/>
+                                            <constraint firstItem="jsp-mO-cLG" firstAttribute="leading" secondItem="eTc-1b-eXa" secondAttribute="leading" constant="15" id="VHJ-WZ-ibF"/>
+                                            <constraint firstAttribute="height" constant="180" id="azf-nG-Aj4"/>
+                                            <constraint firstItem="9rh-hi-8zq" firstAttribute="leading" secondItem="eTc-1b-eXa" secondAttribute="leading" constant="10" id="ef4-Zo-waE"/>
+                                            <constraint firstItem="9rh-hi-8zq" firstAttribute="top" secondItem="eTc-1b-eXa" secondAttribute="top" constant="10" id="igS-Ud-FCR"/>
+                                            <constraint firstAttribute="bottom" secondItem="kj7-NR-JlD" secondAttribute="bottom" id="mg4-yU-xcR"/>
+                                            <constraint firstItem="kj7-NR-JlD" firstAttribute="leading" secondItem="eTc-1b-eXa" secondAttribute="leading" id="zF9-AH-l36"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="eTc-1b-eXa" firstAttribute="centerX" secondItem="QJL-We-pcE" secondAttribute="centerX" id="9xC-Fz-Dqg"/>
+                                    <constraint firstItem="eTc-1b-eXa" firstAttribute="leading" secondItem="QJL-We-pcE" secondAttribute="leading" constant="40" id="YUC-xS-PST"/>
+                                    <constraint firstItem="eTc-1b-eXa" firstAttribute="centerY" secondItem="QJL-We-pcE" secondAttribute="centerY" id="o1C-Zh-xap"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QJL-We-pcE" firstAttribute="trailing" secondItem="sHw-Zy-yno" secondAttribute="trailing" id="Aqc-nz-duM"/>
+                            <constraint firstItem="QJL-We-pcE" firstAttribute="top" secondItem="JQh-7m-SHr" secondAttribute="top" id="SwR-OD-6os"/>
+                            <constraint firstItem="QJL-We-pcE" firstAttribute="bottom" secondItem="sHw-Zy-yno" secondAttribute="bottom" id="YT4-8v-11r"/>
+                            <constraint firstItem="QJL-We-pcE" firstAttribute="leading" secondItem="sHw-Zy-yno" secondAttribute="leading" id="bEM-uh-Sww"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sHw-Zy-yno"/>
+                    </view>
+                    <connections>
+                        <outlet property="dimmerView" destination="QJL-We-pcE" id="VbV-Sn-yba"/>
+                        <outlet property="modalView" destination="eTc-1b-eXa" id="Qtt-7E-lsA"/>
+                        <outlet property="placeholderLabel" destination="jsp-mO-cLG" id="a4u-mZ-oIn"/>
+                        <outlet property="sendButton" destination="kj7-NR-JlD" id="zny-Z5-Xau"/>
+                        <outlet property="textView" destination="9rh-hi-8zq" id="6gz-yH-79t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yrA-av-fon" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2500" y="1495.5022488755624"/>
         </scene>
         <!--Rate this lecture-->
         <scene sceneID="qyj-6V-PDy">

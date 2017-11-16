@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4ED81C5675AA67C815AF46CD /* Pods_InQwire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14839B72680816B1404E112 /* Pods_InQwire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		A31469421FBD37B700276EC2 /* ConfuseModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31469411FBD37B700276EC2 /* ConfuseModalViewController.swift */; };
+		A31469441FBE41B200276EC2 /* SendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31469431FBE41B200276EC2 /* SendButton.swift */; };
 		A370303B1FBBC10300BE0C02 /* ConfusionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370303A1FBBC10300BE0C02 /* ConfusionButton.swift */; };
 		A3B03CD51F9033170030DC1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B03CD41F9033170030DC1E /* AppDelegate.swift */; };
 		A3B03CDA1F9033170030DC1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B03CD81F9033170030DC1E /* Main.storyboard */; };
@@ -21,7 +23,7 @@
 		A3E2DCDB1FBBA48400703DA4 /* LecturePlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2DCDA1FBBA48400703DA4 /* LecturePlaceholderViewController.swift */; };
 		A3E901EE1F904F7F0073FD34 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901ED1F904F7F0073FD34 /* UIView+Extensions.swift */; };
 		A3E901F31F9074CF0073FD34 /* LectureRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F21F9074CF0073FD34 /* LectureRatingViewController.swift */; };
-		A3E901F71F907D230073FD34 /* ClassFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F61F907D230073FD34 /* ClassFetcher.swift */; };
+		A3E901F71F907D230073FD34 /* ConfusionSignalSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F61F907D230073FD34 /* ConfusionSignalSender.swift */; };
 		A3E901FA1F90822C0073FD34 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F91F90822C0073FD34 /* Course.swift */; };
 		A3E901FD1F9084F60073FD34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901FC1F9084F60073FD34 /* User.swift */; };
 		A3E901FF1F90863C0073FD34 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901FE1F90863C0073FD34 /* API.swift */; };
@@ -32,6 +34,8 @@
 /* Begin PBXFileReference section */
 		1CCE42B55402BEDAE39D6232 /* Pods-InQwire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InQwire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InQwire/Pods-InQwire.debug.xcconfig"; sourceTree = "<group>"; };
 		7DD15EBC5735ABBC41944A3C /* Pods-InQwire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InQwire.release.xcconfig"; path = "Pods/Target Support Files/Pods-InQwire/Pods-InQwire.release.xcconfig"; sourceTree = "<group>"; };
+		A31469411FBD37B700276EC2 /* ConfuseModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfuseModalViewController.swift; sourceTree = "<group>"; };
+		A31469431FBE41B200276EC2 /* SendButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendButton.swift; sourceTree = "<group>"; };
 		A370303A1FBBC10300BE0C02 /* ConfusionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfusionButton.swift; sourceTree = "<group>"; };
 		A3B03CD11F9033170030DC1E /* InQwire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InQwire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B03CD41F9033170030DC1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +52,7 @@
 		A3E901ED1F904F7F0073FD34 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A3E901F21F9074CF0073FD34 /* LectureRatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRatingViewController.swift; sourceTree = "<group>"; };
 		A3E901F51F907A580073FD34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A3E901F61F907D230073FD34 /* ClassFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassFetcher.swift; sourceTree = "<group>"; };
+		A3E901F61F907D230073FD34 /* ConfusionSignalSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfusionSignalSender.swift; sourceTree = "<group>"; };
 		A3E901F91F90822C0073FD34 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		A3E901FC1F9084F60073FD34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A3E901FE1F90863C0073FD34 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -118,8 +122,9 @@
 			children = (
 				A3E2DCD11FBA5E6500703DA4 /* CourseListViewController.swift */,
 				A3E2DCD31FBA73A400703DA4 /* SlidesPageViewController.swift */,
-				A3E2DCDA1FBBA48400703DA4 /* LecturePlaceholderViewController.swift */,
 				A3E2DCD51FBA9B7300703DA4 /* SingleSlideViewController.swift */,
+				A31469411FBD37B700276EC2 /* ConfuseModalViewController.swift */,
+				A3E2DCDA1FBBA48400703DA4 /* LecturePlaceholderViewController.swift */,
 				A3E901F21F9074CF0073FD34 /* LectureRatingViewController.swift */,
 			);
 			path = ViewControllers;
@@ -140,6 +145,7 @@
 			children = (
 				A3E2DCCE1FBA46BA00703DA4 /* CourseTableViewCell.swift */,
 				A370303A1FBBC10300BE0C02 /* ConfusionButton.swift */,
+				A31469431FBE41B200276EC2 /* SendButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,7 +169,7 @@
 		A3E901F81F907D280073FD34 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				A3E901F61F907D230073FD34 /* ClassFetcher.swift */,
+				A3E901F61F907D230073FD34 /* ConfusionSignalSender.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -338,15 +344,17 @@
 				A3E901F31F9074CF0073FD34 /* LectureRatingViewController.swift in Sources */,
 				A3E901EE1F904F7F0073FD34 /* UIView+Extensions.swift in Sources */,
 				A3E2DCD81FBB651000703DA4 /* UserManager.swift in Sources */,
+				A31469421FBD37B700276EC2 /* ConfuseModalViewController.swift in Sources */,
 				A3E901FA1F90822C0073FD34 /* Course.swift in Sources */,
 				A3E2DCD61FBA9B7300703DA4 /* SingleSlideViewController.swift in Sources */,
-				A3E901F71F907D230073FD34 /* ClassFetcher.swift in Sources */,
+				A3E901F71F907D230073FD34 /* ConfusionSignalSender.swift in Sources */,
 				A3E902041F9110DA0073FD34 /* Lecture.swift in Sources */,
 				A3E2DCD41FBA73A400703DA4 /* SlidesPageViewController.swift in Sources */,
 				A3E2DCD21FBA5E6500703DA4 /* CourseListViewController.swift in Sources */,
 				A3E901FD1F9084F60073FD34 /* User.swift in Sources */,
 				A3E901FF1F90863C0073FD34 /* API.swift in Sources */,
 				A3E2DCDB1FBBA48400703DA4 /* LecturePlaceholderViewController.swift in Sources */,
+				A31469441FBE41B200276EC2 /* SendButton.swift in Sources */,
 				A3B03CD51F9033170030DC1E /* AppDelegate.swift in Sources */,
 				A3E2DCCF1FBA46BA00703DA4 /* CourseTableViewCell.swift in Sources */,
 			);
