@@ -110,6 +110,38 @@ struct API {
         path.removeObserver(withHandle: observer)
     }
     
+    static func getCurrentPoll(forLecture lectureId: String, courseId: String,
+                               completion: @escaping (Poll?) -> Void)
+    {
+        API.database.child(Path.courses.value).child(courseId).child(Path.lectures.value).child(lectureId)
+            .child("polls").queryLimited(toLast: 1).observeSingleEvent(of: .value)
+        { snapshot in
+            guard let dictionary = snapshot.value as? NSDictionary,
+                let key = dictionary.allKeys.first as? String,
+                let value = dictionary.value(forKey: key) as? NSDictionary else
+            {
+                    return completion(nil)
+            }
+            
+            value.setValue(key, forKey: "id")
+            return completion(Poll.from(value))            
+        }
+    }
+    
+    static func submitResponse(toPoll pollId: String, response: Int, from studentId: String,
+                               lectureId: String, courseId: String, completion: @escaping (Bool) -> Void)
+    {
+        let path = API.database.child(Path.courses.value).child(courseId).child(Path.lectures.value)
+            .child(lectureId).child("polls").child(pollId).child("responses")
+        let value: [String: Any] = [
+            studentId: response
+        ]
+        
+        path.updateChildValues(value) { error, _ in
+            completion(error == nil)
+        }
+    }
+
     static func rate(lectureId: String, from studentId: String, courseId: String, understanding: Int,
                      pace: Int, engagement: Int, comments: String?, completion: ((Bool) -> Void)?)
     {

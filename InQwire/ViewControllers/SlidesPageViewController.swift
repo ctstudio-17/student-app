@@ -99,6 +99,20 @@ final class SlidesPageViewController: UIPageViewController {
         placeholder.set(state: state, title: title)
         self.setViewControllers([placeholder], direction: .forward, animated: false)
     }
+    
+    @IBAction private func showPoll() {
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "poll"),
+            let pollViewController = viewController as? PollViewController else
+        {
+            return
+        }
+        
+        
+        pollViewController.lectureId = self.lecture?.id
+        pollViewController.courseId = self.course?.id
+        let navigationController = UINavigationController(rootViewController: pollViewController)
+        self.present(navigationController, animated: true, completion: nil)
+    }
 }
 
 // MARK: - UIPageViewControllerDataSource

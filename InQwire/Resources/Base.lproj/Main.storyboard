@@ -121,7 +121,16 @@
         <!--Slides Page View Controller-->
         <scene sceneID="Ps1-oP-WeF">
             <objects>
-                <pageViewController storyboardIdentifier="slidesPage" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="2" navigationOrientation="horizontal" spineLocation="none" id="UYQ-aw-mgR" customClass="SlidesPageViewController" customModule="InQwire" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="slidesPage" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="2" navigationOrientation="horizontal" spineLocation="none" id="UYQ-aw-mgR" customClass="SlidesPageViewController" customModule="InQwire" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="pZh-Se-04O">
+                        <barButtonItem key="rightBarButtonItem" title="Poll" id="Ujr-pK-ixG">
+                            <connections>
+                                <action selector="showPoll" destination="UYQ-aw-mgR" id="xNa-KR-wDZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NWe-b9-I4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1138" y="817"/>
@@ -189,6 +198,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E9U-Ca-Whr"/>
                     </view>
+                    <navigationItem key="navigationItem" id="riI-3H-0PW">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="bX7-v6-O6R"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="cornerButton" destination="rff-Un-ZSG" id="olg-fy-P5s"/>
                         <outlet property="imageView" destination="2pm-hg-WGs" id="5sU-fR-DTG"/>
@@ -343,6 +356,134 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yrA-av-fon" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2500" y="1495.5022488755624"/>
+        </scene>
+        <!--Poll-->
+        <scene sceneID="VIX-xh-ntu">
+            <objects>
+                <viewController storyboardIdentifier="poll" id="VdZ-0Z-pk2" customClass="PollViewController" customModule="InQwire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IJs-V2-3NN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="AKz-Tz-tkc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="separatorColor" red="0.76470588240000004" green="0.7843137255" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="separatorInset" minX="17" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <view key="tableFooterView" hidden="YES" contentMode="scaleToFill" id="30X-UR-kdu" userLabel="Footer">
+                                    <rect key="frame" x="0.0" y="117.5" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbI-XB-NLg" customClass="SendButton" customModule="InQwire" customModuleProvider="target">
+                                            <rect key="frame" x="25" y="25" width="325" height="50"/>
+                                            <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="BS5-xV-Wy6"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                            <state key="normal" title="Submit">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="defaultColor">
+                                                    <color key="value" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="successColor">
+                                                    <color key="value" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="failureColor">
+                                                    <color key="value" red="0.56862745100000001" green="0.61568627450000002" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="defaultTitle" value="Submit"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="successTitle" value="Success"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="failureTitle" value="Retry"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="submitFeedbackWithSender:" destination="DOl-ua-gPM" eventType="touchUpInside" id="O14-nP-56I"/>
+                                                <action selector="submitWithSender:" destination="VdZ-0Z-pk2" eventType="touchUpInside" id="F5N-vs-bLn"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="YbI-XB-NLg" firstAttribute="top" secondItem="30X-UR-kdu" secondAttribute="top" constant="25" id="EOi-dD-1AK"/>
+                                        <constraint firstAttribute="trailing" secondItem="YbI-XB-NLg" secondAttribute="trailing" constant="25" id="Vov-M7-bsj"/>
+                                        <constraint firstAttribute="bottom" secondItem="YbI-XB-NLg" secondAttribute="bottom" constant="25" id="XMJ-B6-FAy"/>
+                                        <constraint firstItem="YbI-XB-NLg" firstAttribute="leading" secondItem="30X-UR-kdu" secondAttribute="leading" constant="25" id="edz-2j-xMq"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="xYX-99-vGZ" style="IBUITableViewCellStyleDefault" id="bTy-gN-hjJ">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bTy-gN-hjJ" id="Par-y2-qXU">
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xYX-99-vGZ">
+                                                    <rect key="frame" x="17" y="0.0" width="319" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VdZ-0Z-pk2" id="O1q-nq-SnJ"/>
+                                    <outlet property="delegate" destination="VdZ-0Z-pk2" id="x8S-wB-08I"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AKz-Tz-tkc" firstAttribute="leading" secondItem="65Q-3C-FrF" secondAttribute="leading" id="Sly-Sk-YzC"/>
+                            <constraint firstItem="AKz-Tz-tkc" firstAttribute="trailing" secondItem="65Q-3C-FrF" secondAttribute="trailing" id="dy2-iV-oRP"/>
+                            <constraint firstItem="AKz-Tz-tkc" firstAttribute="top" secondItem="IJs-V2-3NN" secondAttribute="top" id="hF2-pT-JbB"/>
+                            <constraint firstItem="AKz-Tz-tkc" firstAttribute="bottom" secondItem="65Q-3C-FrF" secondAttribute="bottom" id="tNg-FS-cYo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="65Q-3C-FrF"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Poll" id="dll-pd-nHL">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="3kY-vY-QFX">
+                            <connections>
+                                <action selector="back" destination="VdZ-0Z-pk2" id="rny-lw-ktc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="headerView" destination="fbo-pg-gBh" id="bGR-YQ-r0b"/>
+                        <outlet property="tableView" destination="AKz-Tz-tkc" id="6ih-z2-eAz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SKy-os-zXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="fbo-pg-gBh">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poll not available. Pull down to refresh." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxC-iE-2XY">
+                            <rect key="frame" x="30" y="43.5" width="180" height="41"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.56862745100000001" green="0.61568627450000002" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="DxC-iE-2XY" firstAttribute="centerY" secondItem="fbo-pg-gBh" secondAttribute="centerY" id="6Hr-xd-HlZ"/>
+                        <constraint firstItem="DxC-iE-2XY" firstAttribute="leading" secondItem="309-Op-yOw" secondAttribute="leading" constant="30" id="Jdi-Ib-yN0"/>
+                        <constraint firstItem="309-Op-yOw" firstAttribute="trailing" secondItem="DxC-iE-2XY" secondAttribute="trailing" constant="30" id="oX9-WM-sB9"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="309-Op-yOw"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="1818.4000000000001" y="814.54272863568224"/>
         </scene>
         <!--Feedback-->
         <scene sceneID="Rr8-rr-ooX">

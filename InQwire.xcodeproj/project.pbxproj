@@ -30,6 +30,8 @@
 		A3E902041F9110DA0073FD34 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E902031F9110DA0073FD34 /* Lecture.swift */; };
 		A3FF425F1FBE626C00CA0CB9 /* FeedbackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF425E1FBE626C00CA0CB9 /* FeedbackTableViewController.swift */; };
 		A3FF42611FBE66C900CA0CB9 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF42601FBE66C900CA0CB9 /* StarsView.swift */; };
+		A3FF42631FBE8CC900CA0CB9 /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF42621FBE8CC900CA0CB9 /* Poll.swift */; };
+		A3FF42651FBE95FA00CA0CB9 /* PollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF42641FBE95FA00CA0CB9 /* PollViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		A3E902031F9110DA0073FD34 /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
 		A3FF425E1FBE626C00CA0CB9 /* FeedbackTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableViewController.swift; sourceTree = "<group>"; };
 		A3FF42601FBE66C900CA0CB9 /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
+		A3FF42621FBE8CC900CA0CB9 /* Poll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poll.swift; sourceTree = "<group>"; };
+		A3FF42641FBE95FA00CA0CB9 /* PollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollViewController.swift; sourceTree = "<group>"; };
 		E14839B72680816B1404E112 /* Pods_InQwire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InQwire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -128,6 +132,7 @@
 				A31469411FBD37B700276EC2 /* ConfuseModalViewController.swift */,
 				A3E2DCDA1FBBA48400703DA4 /* LecturePlaceholderViewController.swift */,
 				A3FF425E1FBE626C00CA0CB9 /* FeedbackTableViewController.swift */,
+				A3FF42641FBE95FA00CA0CB9 /* PollViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				A3E901F91F90822C0073FD34 /* Course.swift */,
 				A3E902031F9110DA0073FD34 /* Lecture.swift */,
 				A3E901FC1F9084F60073FD34 /* User.swift */,
+				A3FF42621FBE8CC900CA0CB9 /* Poll.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,11 +358,13 @@
 				A3E901FA1F90822C0073FD34 /* Course.swift in Sources */,
 				A3E2DCD61FBA9B7300703DA4 /* SingleSlideViewController.swift in Sources */,
 				A3E901F71F907D230073FD34 /* ConfusionSignalSender.swift in Sources */,
+				A3FF42651FBE95FA00CA0CB9 /* PollViewController.swift in Sources */,
 				A3E902041F9110DA0073FD34 /* Lecture.swift in Sources */,
 				A3E2DCD41FBA73A400703DA4 /* SlidesPageViewController.swift in Sources */,
 				A3E2DCD21FBA5E6500703DA4 /* CourseListViewController.swift in Sources */,
 				A3E901FD1F9084F60073FD34 /* User.swift in Sources */,
 				A3E901FF1F90863C0073FD34 /* API.swift in Sources */,
+				A3FF42631FBE8CC900CA0CB9 /* Poll.swift in Sources */,
 				A3E2DCDB1FBBA48400703DA4 /* LecturePlaceholderViewController.swift in Sources */,
 				A31469441FBE41B200276EC2 /* SendButton.swift in Sources */,
 				A3B03CD51F9033170030DC1E /* AppDelegate.swift in Sources */,
