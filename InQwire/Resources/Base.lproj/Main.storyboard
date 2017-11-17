@@ -459,6 +459,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="headerView" destination="fbo-pg-gBh" id="bGR-YQ-r0b"/>
+                        <outlet property="submitButton" destination="YbI-XB-NLg" id="gb3-Df-mG6"/>
                         <outlet property="tableView" destination="AKz-Tz-tkc" id="6ih-z2-eAz"/>
                     </connections>
                 </viewController>

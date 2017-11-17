@@ -19,6 +19,7 @@ final class PollViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var headerView: UIView!
+    @IBOutlet private var submitButton: SendButton!
     
     fileprivate var poll: Poll? {
         didSet {
@@ -29,7 +30,12 @@ final class PollViewController: UIViewController {
         }
     }
     
-    fileprivate var selectedIndexPath: IndexPath?
+    fileprivate var selectedIndexPath: IndexPath? {
+        didSet {
+            let shouldEnable = self.selectedIndexPath != nil
+            self.submitButton.toggleEnabledAppearance(isEnabled: shouldEnable)
+        }
+    }
 
     var lectureId: String?
     var courseId: String?
@@ -37,9 +43,9 @@ final class PollViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        self.submitButton.toggleEnabledAppearance(isEnabled: false)
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(getPoll), for: .valueChanged)
-        self.tableView.addSubview(refreshControl)
         self.tableView.refreshControl = refreshControl
         self.tableView.refreshControl?.beginRefreshing()
         self.getPoll()
@@ -56,15 +62,10 @@ final class PollViewController: UIViewController {
 
         API.getCurrentPoll(forLecture: lectureId, courseId: courseId, completion: { [weak self] poll in
             self?.tableView.refreshControl?.endRefreshing()
-            if poll == nil {
-                self?.tableView.tableHeaderView = self?.headerView
-                self?.tableView.tableFooterView?.isHidden = true
-            } else {
-                self?.tableView.tableHeaderView = nil
-                self?.tableView.tableFooterView?.isHidden = false
-            }
-
-            self?.poll = poll
+            let isPollValid = poll != nil && poll?.isActive == true
+            self?.tableView.tableHeaderView = isPollValid ? nil : self?.headerView
+            self?.tableView.tableFooterView?.isHidden = !isPollValid
+            self?.poll = isPollValid ? poll : nil
         })
     }
     
@@ -116,6 +117,7 @@ extension PollViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellIdentifier) ??
             UITableViewCell(style: .default, reuseIdentifier: kCellIdentifier)
+        cell.textLabel?.numberOfLines = 0
         switch indexPath.section {
             case Section.question.section:
                 cell.textLabel?.text = self.poll?.question
