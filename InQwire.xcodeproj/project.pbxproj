@@ -22,13 +22,14 @@
 		A3E2DCD81FBB651000703DA4 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2DCD71FBB651000703DA4 /* UserManager.swift */; };
 		A3E2DCDB1FBBA48400703DA4 /* LecturePlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2DCDA1FBBA48400703DA4 /* LecturePlaceholderViewController.swift */; };
 		A3E901EE1F904F7F0073FD34 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901ED1F904F7F0073FD34 /* UIView+Extensions.swift */; };
-		A3E901F31F9074CF0073FD34 /* LectureRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F21F9074CF0073FD34 /* LectureRatingViewController.swift */; };
 		A3E901F71F907D230073FD34 /* ConfusionSignalSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F61F907D230073FD34 /* ConfusionSignalSender.swift */; };
 		A3E901FA1F90822C0073FD34 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901F91F90822C0073FD34 /* Course.swift */; };
 		A3E901FD1F9084F60073FD34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901FC1F9084F60073FD34 /* User.swift */; };
 		A3E901FF1F90863C0073FD34 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E901FE1F90863C0073FD34 /* API.swift */; };
 		A3E902021F9107C60073FD34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3E901F51F907A580073FD34 /* GoogleService-Info.plist */; };
 		A3E902041F9110DA0073FD34 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E902031F9110DA0073FD34 /* Lecture.swift */; };
+		A3FF425F1FBE626C00CA0CB9 /* FeedbackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF425E1FBE626C00CA0CB9 /* FeedbackTableViewController.swift */; };
+		A3FF42611FBE66C900CA0CB9 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF42601FBE66C900CA0CB9 /* StarsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,13 +51,14 @@
 		A3E2DCD71FBB651000703DA4 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		A3E2DCDA1FBBA48400703DA4 /* LecturePlaceholderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LecturePlaceholderViewController.swift; sourceTree = "<group>"; };
 		A3E901ED1F904F7F0073FD34 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		A3E901F21F9074CF0073FD34 /* LectureRatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRatingViewController.swift; sourceTree = "<group>"; };
 		A3E901F51F907A580073FD34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3E901F61F907D230073FD34 /* ConfusionSignalSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfusionSignalSender.swift; sourceTree = "<group>"; };
 		A3E901F91F90822C0073FD34 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		A3E901FC1F9084F60073FD34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A3E901FE1F90863C0073FD34 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		A3E902031F9110DA0073FD34 /* Lecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
+		A3FF425E1FBE626C00CA0CB9 /* FeedbackTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableViewController.swift; sourceTree = "<group>"; };
+		A3FF42601FBE66C900CA0CB9 /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 		E14839B72680816B1404E112 /* Pods_InQwire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InQwire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -125,7 +127,7 @@
 				A3E2DCD51FBA9B7300703DA4 /* SingleSlideViewController.swift */,
 				A31469411FBD37B700276EC2 /* ConfuseModalViewController.swift */,
 				A3E2DCDA1FBBA48400703DA4 /* LecturePlaceholderViewController.swift */,
-				A3E901F21F9074CF0073FD34 /* LectureRatingViewController.swift */,
+				A3FF425E1FBE626C00CA0CB9 /* FeedbackTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -146,6 +148,7 @@
 				A3E2DCCE1FBA46BA00703DA4 /* CourseTableViewCell.swift */,
 				A370303A1FBBC10300BE0C02 /* ConfusionButton.swift */,
 				A31469431FBE41B200276EC2 /* SendButton.swift */,
+				A3FF42601FBE66C900CA0CB9 /* StarsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,9 +344,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A370303B1FBBC10300BE0C02 /* ConfusionButton.swift in Sources */,
-				A3E901F31F9074CF0073FD34 /* LectureRatingViewController.swift in Sources */,
+				A3FF42611FBE66C900CA0CB9 /* StarsView.swift in Sources */,
 				A3E901EE1F904F7F0073FD34 /* UIView+Extensions.swift in Sources */,
 				A3E2DCD81FBB651000703DA4 /* UserManager.swift in Sources */,
+				A3FF425F1FBE626C00CA0CB9 /* FeedbackTableViewController.swift in Sources */,
 				A31469421FBD37B700276EC2 /* ConfuseModalViewController.swift in Sources */,
 				A3E901FA1F90822C0073FD34 /* Course.swift in Sources */,
 				A3E2DCD61FBA9B7300703DA4 /* SingleSlideViewController.swift in Sources */,

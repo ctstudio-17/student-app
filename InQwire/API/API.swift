@@ -110,19 +110,21 @@ struct API {
         path.removeObserver(withHandle: observer)
     }
     
-    static func rate(lectureId: String, from studentId: String, courseId: String, ratings: Int,
-                     feedback: String, completion: ((Bool) -> Void)?)
+    static func rate(lectureId: String, from studentId: String, courseId: String, understanding: Int,
+                     pace: Int, engagement: Int, comments: String?, completion: ((Bool) -> Void)?)
     {
         let path = API.database.child(Path.courses.value).child(courseId).child(Path.lectures.value)
             .child(lectureId).child("feedback")
-        let key = path.childByAutoId().key
-        let feedback: [String: Any] = [
-            "content": feedback,
-            "rating": ratings,
-            "student": studentId
+        var value: [String: Any] = [
+            "student": studentId,
+            "understanding": understanding,
+            "pace": pace,
+            "engagement": engagement,
         ]
         
-        path.updateChildValues(["\(key)": feedback]) { error, _ in
+        value["comments"] = comments
+        let key = path.childByAutoId().key
+        path.updateChildValues(["\(key)": value]) { error, _ in
             completion?(error == nil)
         }
     }

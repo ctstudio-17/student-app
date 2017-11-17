@@ -66,8 +66,8 @@ final class SlidesPageViewController: UIPageViewController {
                 return
             }
             
-            if let viewController = self?.storyboard?.instantiateViewController(withIdentifier: "feedback"),
-                let feedback = viewController as? LectureRatingViewController
+            if let viewController = self?.storyboard?.instantiateViewController(withIdentifier: "feedbackTable"),
+                let feedback = viewController as? FeedbackTableViewController
             {
                 feedback.course = self?.course
                 feedback.lectureId = lectureId
