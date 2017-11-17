@@ -102,7 +102,7 @@ extension PollViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return Section.all.count
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case Section.question.section:
@@ -122,9 +122,11 @@ extension PollViewController: UITableViewDataSource {
             case Section.question.section:
                 cell.textLabel?.text = self.poll?.question
                 cell.accessoryType = .none
+                cell.selectionStyle = .none
             case Section.options.section:
                 cell.textLabel?.text = self.poll?.options[indexPath.row]
                 cell.accessoryType = indexPath == self.selectedIndexPath ? .checkmark : .none
+                cell.selectionStyle = .default
             default:
                 break
         }

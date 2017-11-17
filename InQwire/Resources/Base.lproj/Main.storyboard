@@ -164,16 +164,17 @@
                                     <outlet property="delegate" destination="m32-2p-9JW" id="NN6-gv-PTx"/>
                                 </connections>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rff-Un-ZSG" customClass="ConfusionButton" customModule="InQwire" customModuleProvider="target">
-                                <rect key="frame" x="283" y="575" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rff-Un-ZSG" customClass="ConfusionButton" customModule="InQwire" customModuleProvider="target">
+                                <rect key="frame" x="265" y="557" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="OVm-ct-r6B"/>
-                                    <constraint firstAttribute="width" constant="80" id="qqe-Lq-CYD"/>
+                                    <constraint firstAttribute="height" constant="100" id="OVm-ct-r6B"/>
+                                    <constraint firstAttribute="width" constant="100" id="qqe-Lq-CYD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <state key="normal" title="😕" backgroundImage="Rounded shadow">
                                     <color key="titleColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="Rounded shadow - highlighted"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="0.0"/>
@@ -189,11 +190,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="E9U-Ca-Whr" firstAttribute="bottom" secondItem="rff-Un-ZSG" secondAttribute="bottom" constant="12" id="CJK-Xo-WPt"/>
+                            <constraint firstItem="E9U-Ca-Whr" firstAttribute="bottom" secondItem="rff-Un-ZSG" secondAttribute="bottom" constant="10" id="CJK-Xo-WPt"/>
                             <constraint firstItem="kNV-Kb-Dwa" firstAttribute="leading" secondItem="4Jv-H0-o8E" secondAttribute="leading" id="JXJ-M2-NRR"/>
                             <constraint firstAttribute="bottom" secondItem="kNV-Kb-Dwa" secondAttribute="bottom" id="NZt-0D-lPo"/>
                             <constraint firstItem="kNV-Kb-Dwa" firstAttribute="top" secondItem="4Jv-H0-o8E" secondAttribute="top" id="VI9-HH-aQO"/>
-                            <constraint firstItem="E9U-Ca-Whr" firstAttribute="trailing" secondItem="rff-Un-ZSG" secondAttribute="trailing" constant="12" id="Zpw-Q1-Qb8"/>
+                            <constraint firstItem="E9U-Ca-Whr" firstAttribute="trailing" secondItem="rff-Un-ZSG" secondAttribute="trailing" constant="10" id="Zpw-Q1-Qb8"/>
                             <constraint firstAttribute="trailing" secondItem="kNV-Kb-Dwa" secondAttribute="trailing" id="v8o-de-Qzb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E9U-Ca-Whr"/>
@@ -903,7 +904,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Rounded shadow" width="86" height="86"/>
+        <image name="Rounded shadow" width="104" height="104"/>
+        <image name="Rounded shadow - highlighted" width="104" height="104"/>
         <image name="Star" width="42" height="40"/>
         <image name="Star - selected" width="42" height="40"/>
     </resources>

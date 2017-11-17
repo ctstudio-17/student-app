@@ -1,4 +1,5 @@
 import UIKit
+import SnapKit
 
 enum ConfusionButtonState {
     case idle
@@ -16,9 +17,10 @@ final class ConfusionButton: UIButton {
         super.awakeFromNib()
         let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         spinner.hidesWhenStopped = true
-        spinner.center = CGPoint.init(x: self.bounds.width / 2, y: self.bounds.height / 2)
         self.addSubview(spinner)
+        spinner.snp.makeConstraints { $0.center.equalToSuperview() }
         self.spinner = spinner
+        self.layoutIfNeeded()
     }
     
     func transition(to state: ConfusionButtonState) {
@@ -28,7 +30,7 @@ final class ConfusionButton: UIButton {
                 self.spinner?.stopAnimating()
                 self.titleLabel?.alpha = 0
                 self.setTitle(self.idleTitle, for: .normal)
-                self.titleLabel?.font = UIFont.systemFont(ofSize: 35, weight: .bold)
+                self.titleLabel?.font = UIFont.systemFont(ofSize: 40, weight: .bold)
                 self.titleLabel?.fadeIn()
             case .sending:
                 self.titleLabel?.fadeOut()
@@ -38,7 +40,7 @@ final class ConfusionButton: UIButton {
                 self.isUserInteractionEnabled = false
                 self.titleLabel?.alpha = 0
                 self.spinner?.stopAnimating()
-                self.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+                self.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
                 self.setTitle(self.sentTitle, for: .normal)
                 self.titleLabel?.fadeIn()
         }
